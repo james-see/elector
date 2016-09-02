@@ -1,5 +1,7 @@
 # elector
 
+[![Join the chat at https://gitter.im/elector-browser/Lobby](https://badges.gitter.im/elector-browser/Lobby.svg)](https://gitter.im/elector-browser/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 TOR BROWSER IN ELECTRON
 
 here is how to run it yourself:
