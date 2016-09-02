@@ -44,7 +44,7 @@ brew install tor
 ```
 then make sure tor is set to run when your OS starts, then check duckduckgo onion (http://3g2upl4pq6kufc4m.onion) site to confirm it is working
 
-### useful tor links
+### useful .onion links
 
 duck duck go http://3g2upl4pq6kufc4m.onion
 
