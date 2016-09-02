@@ -34,3 +34,21 @@ _in case you don't have tor install on OSX yet_
 brew install tor
 ```
 then make sure tor is set to run when your OS starts, then check duckduckgo onion (http://3g2upl4pq6kufc4m.onion) site to confirm it is working
+
+### useful tor links
+
+duck duck go http://3g2upl4pq6kufc4m.onion
+
+tor paste http://mc6nld3smffo3vgm.onion
+
+not evil tor search http://hss3uro2hsxfogfq.onion
+
+hidden wiki http://gxamjbnu7uknahng.onion/wiki/index.php/Main_Page
+
+hidden answers http://answerstedhctbek.onion
+
+librechan http://librechbtnnmzoa7.onion
+
+searx http://ulrn6sryqaifefld.onion
+
+etherpad hosted by riseup onion http://5jp7xtmox6jyoqd5.onion
