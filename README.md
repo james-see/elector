@@ -1,8 +1,12 @@
+<img src='https://cloud.githubusercontent.com/assets/616585/18190724/c47550ee-7092-11e6-9cb4-15e02b9ca298.png'/> 
 # elector
 
 [![Join the chat at https://gitter.im/elector-browser/Lobby](https://badges.gitter.im/elector-browser/Lobby.svg)](https://gitter.im/elector-browser/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 TOR BROWSER IN ELECTRON
+
+NOTE:   
+THIS IS IN ALPHA still. I made this because I wanted a simple browser that auto-connected to my tor service running on my MacBook that I installed via homebrew. If you are running tor in OSX via homebrew, then this app will work out of the box if you follow the install instructions below. Otherwise, you may have to edit your torrc file and (gosh!) actually use the terminal / command line / whatever you call it.
 
 here is how to run it yourself:
 
@@ -22,9 +26,11 @@ npm start
 
 The index.js file is configured to force the connection through the socks5 proxy 127.0.0.1:9050. So for OSX you can install tor via homebrew:
 
+_in case you don't have tor install on OSX yet_
+
 ### OSX & homebrew easiness to get Tor installed as a service:
 
 ```
 brew install tor
 ```
-then make sure tor is set to run when your OS starts, then check duckduckgo onion site to confirm it is working
+then make sure tor is set to run when your OS starts, then check duckduckgo onion (http://3g2upl4pq6kufc4m.onion) site to confirm it is working
