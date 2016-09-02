@@ -1,6 +1,6 @@
 var app  = require('app')
 var BrowserWindow = require('browser-window')
-
+app.commandLine.appendSwitch('proxy-server', 'socks5://127.0.0.1:9050')
 var mainWindow = null
 
 app.on('window-all-closed', function() {
