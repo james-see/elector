@@ -5,16 +5,16 @@
 
 TOR BROWSER IN ELECTRON
 
-NOTE:   
-THIS IS IN ALPHA. 
+### NOTE:   
+THIS IS IN ALPHA, USER BEWARE. 
 
-WHY?:   
+### WHY?:   
 I made this because I wanted a simple browser that auto-connected to my tor service running on my MacBook that I installed via homebrew. If you are running tor in OSX via homebrew, then this app will work out of the box if you follow the install instructions below. Otherwise, you may have to edit your torrc file and (gosh!) actually use the terminal / command line / whatever you call it.
 
-SECURITY ISSUES:   
+### SECURITY ISSUES:   
 ELECTRON has known security issues with using an unsandboxed version of chromium. The roadmap is to use the electron-prebuilt module from Brave browser since they re-sandboxed and fixed a lot of the security issues related to potential for XSS attacks.
 
-FORK ME:   
+### FORK ME:   
 Please fork and make this better.
 
 here is how to run it yourself:
