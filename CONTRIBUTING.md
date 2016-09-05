@@ -20,7 +20,7 @@ Whether you are a programmer or not, you can contribute to Elector. Below are so
 7. Write a test
 8. Add a comment to the code
 11. Create an example
-12. Answer a question on gitter
+12. Answer a question on [gitter](https://gitter.im/elector-browser/Lobby)
 
 ###More info
 contact james@jamescampbell.us
