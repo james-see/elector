@@ -15,7 +15,8 @@ I made this because I wanted a simple browser that auto-connected to my tor serv
 ELECTRON has known security issues with using an unsandboxed version of chromium. The roadmap is to use the electron-prebuilt module from Brave browser since they re-sandboxed and fixed a lot of the security issues related to potential for XSS attacks.
 
 ### FORK ME:   
-Please fork and make this better.
+Please fork and make this better.   
+READ the [CONTRIBUTING](https://github.com/jamesacampbell/elector/blob/master/CONTRIBUTING.md) doc for tips on how to help with this project. Thank you!
 
 here is how to run it yourself:
 
