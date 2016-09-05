@@ -14,7 +14,7 @@ Whether you are a programmer or not, you can contribute to Elector. Below are so
 1. Follow along on GitHub. Looks like you're in the right place already! See all project repositories at http://github.com/elector.
 3. Diagnose a bug by creating an issue
 3. Suggest an improvement by creating an issue
-4. Close resolved issues ([here's the big list](https://github.com/issues?q=is%3Aopen+user%elector+sort%3Aupdated-desc))
+4. Close resolved issues ([here's the big list](https://github.com/jamesacampbell/elector/issues?q=is%3Aopen+is%3Aissue))
 5. [Test the code](https://github.com/elector/blob/master/README.md)
 6. Fix a bug/resolve an issue
 7. Write a test
