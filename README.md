@@ -9,6 +9,8 @@ TOR BROWSER IN ELECTRON
 THIS IS IN ALPHA, USER BEWARE. 
 
 ### WHY?:   
+One liner -- "A super lightweight Tor connected browser that uses the latest in web technologies."
+
 I made this because I wanted a simple browser that auto-connected to my tor service running on my MacBook that I installed via homebrew. If you are running tor in OSX via homebrew, then this app will work out of the box if you follow the install instructions below. Otherwise, you may have to edit your torrc file and (gosh!) actually use the terminal / command line / whatever you call it.
 
 ### SECURITY ISSUES:   
