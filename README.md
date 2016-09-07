@@ -3,7 +3,7 @@
 # elector
 
 [![Join the chat at https://gitter.im/elector-browser/Lobby](https://badges.gitter.im/elector-browser/Lobby.svg)](https://gitter.im/elector-browser/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Gratipay Team](https://img.shields.io/gratipay/team/shields.svg?maxAge=2592000)](https://gratipay.com/elector-browser/)
+[![Gratipay Elector](https://img.shields.io/badge/gratipay-donate-brightgreen.svg)](https://gratipay.com/elector-browser/)
 
 TOR BROWSER IN ELECTRON
 
