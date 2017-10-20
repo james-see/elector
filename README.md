@@ -24,7 +24,7 @@ READ the [CONTRIBUTING](https://github.com/jamesacampbell/elector/blob/master/CO
 
 here is how to run it yourself:
 
-###Install instructions
+### Install instructions
 
 1. you must have tor already installed. follow the instructions from torproject.org
 
