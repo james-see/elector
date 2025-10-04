@@ -8,23 +8,38 @@ html, body {
 }
 
 #browser-chrome {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 
 #browser-tabs {
-  flex: 0 0 auto;
+  position: relative;
+  z-index: 100;
 }
 
 #browser-navbar {
-  flex: 0 0 auto;
+  position: relative;
+  height: 35px;
+  z-index: 100;
 }
 
 #browser-page {
-  flex: 1 1 auto;
-  position: relative;
+  position: absolute;
+  top: 65px;  /* Below tabs + navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* Only visible pages should be displayed */
+#browser-page.visible {
+  display: block;
+}
+
+#browser-page.hidden {
+  display: none;
 }
 
 #draghandle {

@@ -5,7 +5,7 @@ const urllib = require('url')
 
 function createPageObject (location) {
   return {
-    location: location||'https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/',
+    location: location||'http://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/',
     statusText: false,
     title: 'new tab',
     isLoading: false,

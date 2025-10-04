@@ -70,9 +70,11 @@ https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
 
 ### Useful .onion Links
 
-- **DuckDuckGo**: `https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/`
+- **DuckDuckGo**: `http://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/`
 - **Tor Project**: `http://2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion/`
-- **ProPublica**: `https://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/`
+- **ProPublica**: `http://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/`
+
+**Note**: HTTP is used for `.onion` addresses because Tor already provides end-to-end encryption. HTTPS works too but isn't necessary for privacy.
 
 For more onion sites, visit [The Hidden Wiki](https://thehiddenwiki.com/) or use DuckDuckGo's search.
 
