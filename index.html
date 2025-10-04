@@ -259,6 +259,24 @@
             font-size: 0.9em;
         }
         
+        .github-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .github-badges img {
+            height: 24px;
+            transition: transform 0.2s ease;
+        }
+        
+        .github-badges img:hover {
+            transform: scale(1.05);
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -279,6 +297,22 @@
         <div class="container">
             <div class="version-badge">✨ Version 2.1.1 - Now Available</div>
             <h1>🛡️ Elector</h1>
+            
+            <div class="github-badges">
+                <a href="https://github.com/james-see/elector" target="_blank" rel="noopener">
+                    <img src="https://img.shields.io/github/stars/james-see/elector?style=for-the-badge&logo=github&color=7d4cdb&labelColor=1a1a2e" alt="GitHub Stars">
+                </a>
+                <a href="https://github.com/james-see/elector/fork" target="_blank" rel="noopener">
+                    <img src="https://img.shields.io/github/forks/james-see/elector?style=for-the-badge&logo=github&color=9060eb&labelColor=1a1a2e" alt="GitHub Forks">
+                </a>
+                <a href="https://github.com/james-see/elector/releases" target="_blank" rel="noopener">
+                    <img src="https://img.shields.io/github/v/release/james-see/elector?style=for-the-badge&logo=github&color=00d9ff&labelColor=1a1a2e" alt="Latest Release">
+                </a>
+                <a href="https://github.com/james-see/elector/blob/master/LICENSE" target="_blank" rel="noopener">
+                    <img src="https://img.shields.io/badge/license-MIT-00c853?style=for-the-badge&labelColor=1a1a2e" alt="MIT License">
+                </a>
+            </div>
+            
             <p class="tagline">Modern Tor Browser Built with Electron</p>
             <p>Browse .onion sites securely with enhanced privacy features and modern web technologies</p>
             
