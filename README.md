@@ -8,32 +8,51 @@
 TOR BROWSER IN ELECTRON
 
 ### NOTE:   
-THIS IS IN ALPHA, USER BEWARE. 
+**Version 2.0** - Now using modern Electron with enhanced security features!
 
 ### WHY?:   
-One liner -- "A super lightweight Tor connected browser that uses the latest in web technologies."
+"A super lightweight Tor-connected browser built with modern web technologies."
 
-I made this because I wanted a simple browser that auto-connected to my tor service running on my MacBook that I installed via homebrew. If you are running tor in OSX via homebrew, then this app will work out of the box if you follow the install instructions below. Otherwise, you may have to edit your torrc file and (gosh!) actually use the terminal / command line / whatever you call it.
+Elector is a simple browser that auto-connects to your local Tor service. If you're running Tor via homebrew on macOS, this app works out of the box. For other setups, you may need to configure your torrc file.
 
-### SECURITY ISSUES:   
-ELECTRON has known security issues with using an unsandboxed version of chromium. The roadmap is to use the electron-prebuilt module from Brave browser since they re-sandboxed and fixed a lot of the security issues related to potential for XSS attacks.
+### SECURITY IMPROVEMENTS (v2.0):   
+✅ **Updated to Electron 33+** with latest security patches
+✅ **Sandboxed renderer processes** enabled by default (resolves issue #3)
+✅ **Context isolation** to prevent XSS attacks
+✅ **No Node.js integration** in renderer for better security
+✅ Follows modern [Electron security best practices](https://www.electronjs.org/docs/latest/tutorial/security)
 
 ### FORK ME:   
 Please fork and make this better.   
 READ the [CONTRIBUTING](https://github.com/jamesacampbell/elector/blob/master/CONTRIBUTING.md) doc for tips on how to help with this project. Thank you!
 
-here is how to run it yourself:
+### Download Pre-built Binaries
+
+Download the latest release for your platform from the [Releases page](https://github.com/jamesacampbell/elector/releases).
+
+Automated builds are created on every push to master via GitHub Actions.
 
 ### Install instructions
 
-1. you must have tor already installed. follow the instructions from torproject.org
+1. **Install Tor** (required prerequisite):
+   - macOS: `brew install tor && brew services start tor`
+   - Linux: `sudo apt install tor && sudo systemctl start tor`
+   - Windows: Download from [torproject.org](https://www.torproject.org/)
 
-2. then to run this code, follow these steps:
-```
+2. **Run from source**:
+```bash
 git clone https://github.com/jamesacampbell/elector.git
 cd elector
-npm install -d
+npm install
 npm start
+```
+
+3. **Build locally**:
+```bash
+npm run build          # Build for current platform
+npm run build:mac      # macOS
+npm run build:linux    # Linux
+npm run build:win      # Windows
 ```
 
 ### tidbits:
