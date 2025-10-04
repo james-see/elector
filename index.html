@@ -277,7 +277,16 @@
             transform: scale(1.05);
         }
         
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+        
         @media (max-width: 768px) {
+            .logo {
+                max-width: 150px;
+            }
             h1 {
                 font-size: 2.5rem;
             }
@@ -295,8 +304,9 @@
 <body>
     <div class="hero">
         <div class="container">
+            <img src="https://cloud.githubusercontent.com/assets/616585/18190724/c47550ee-7092-11e6-9cb4-15e02b9ca298.png" alt="Elector Logo" class="logo">
             <div class="version-badge">✨ Version 2.1.1 - Now Available</div>
-            <h1>🛡️ Elector</h1>
+            <h1>Elector</h1>
             
             <div class="github-badges">
                 <a href="https://github.com/james-see/elector" target="_blank" rel="noopener">
