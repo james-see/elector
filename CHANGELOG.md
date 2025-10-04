@@ -1,5 +1,23 @@
 # Changelog
 
+## Version 2.0.1 - October 2025
+
+### 🔧 Bug Fixes
+- **Fixed blank screen issue** - Updated to use `@electron/remote` for compatibility with modern Electron
+- **Fixed security vulnerability** - Updated Electron from 33.2.0 to 35.7.5 (fixes ASAR integrity bypass)
+- Adjusted security settings to balance modern practices with legacy React code compatibility
+
+### 📦 Dependencies
+- Updated `electron` to 35.7.5 (fixes CVE)
+- Added `@electron/remote` 2.1.2 for remote module compatibility
+- Enabled `nodeIntegration` and disabled `contextIsolation` for legacy code compatibility
+
+### ⚠️ Known Issues
+- npm install shows deprecation warnings from `electron-builder`'s dependencies
+  - These are transitive dependencies (not our code)
+  - Will be resolved when electron-builder updates its dependencies
+  - Does not affect functionality or security of the built application
+
 ## Version 2.0.0 - October 2025
 
 ### 🔐 Major Security Improvements

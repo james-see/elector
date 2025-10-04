@@ -1,9 +1,7 @@
 'use strict'
-var remote = require('remote')
-var Menu = remote.require('menu')
-var MenuItem = remote.require('menu-item')
-var clipboard = require('clipboard')
-var urllib = require('url')
+const remote = require('@electron/remote')
+const { Menu, MenuItem, clipboard } = remote
+const urllib = require('url')
 
 function createPageObject (location) {
   return {

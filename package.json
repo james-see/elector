@@ -1,6 +1,6 @@
 {
   "name": "elector",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Tor browser built with Electron",
   "main": "index.js",
   "scripts": {
@@ -24,10 +24,12 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "electron": "^33.2.0",
+    "electron": "^35.7.5",
     "electron-builder": "^25.1.8"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@electron/remote": "^2.1.2"
+  },
   "build": {
     "appId": "com.elector.browser",
     "productName": "Elector",
