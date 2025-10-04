@@ -32,10 +32,6 @@ var BrowserPageStatus = React.createClass({
 
 var BrowserPage = React.createClass({
   componentDidMount: function () {
-    // setup resize events
-    window.addEventListener('resize', resize)
-    resize()
-
     // attach webview events
     for (var k in webviewEvents)
       this.refs.webview.getDOMNode().addEventListener(k, webviewHandler(this, webviewEvents[k]))
@@ -43,9 +39,6 @@ var BrowserPage = React.createClass({
     // set location, if given
     if (this.props.page.location)
       this.navigateTo(this.props.page.location)
-  },
-  componentWillUnmount: function () {
-    window.removeEventListener('resize', resize)    
   },
 
   navigateTo: function (l) {
@@ -87,14 +80,4 @@ var webviewEvents = {
   'destroyed': 'onDestroyed',
   'ipc-message': 'onIpcMessage',
   'console-message': 'onConsoleMessage'
-}
-
-function resize () {
-  // Modern Electron webviews don't use shadow DOM
-  Array.prototype.forEach.call(document.querySelectorAll('webview'), function (webview) {
-    if (webview) {
-      webview.style.height = (window.innerHeight - 59) + 'px' // -59 to adjust for the tabs and navbar regions
-      webview.style.width = '100%'
-    }
-  })
 }

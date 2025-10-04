@@ -1,8 +1,32 @@
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   font-family: sans-serif;
   overflow: hidden;
 }
+
+#browser-chrome {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+#browser-tabs {
+  flex: 0 0 auto;
+}
+
+#browser-navbar {
+  flex: 0 0 auto;
+}
+
+#browser-page {
+  flex: 1 1 auto;
+  position: relative;
+}
+
 #draghandle {
   -webkit-app-region: drag;
   height: 10px;
