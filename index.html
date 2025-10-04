@@ -1,114 +1,480 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Elector by jamesacampbell</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Elector</h1>
-      <h2 class="project-tagline">TOR BROWSER IN ELECTRON</h2>
-      <a href="https://github.com/jamesacampbell/elector" class="btn">View on GitHub</a>
-      <a href="https://github.com/jamesacampbell/elector/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/jamesacampbell/elector/tarball/master" class="btn">Download .tar.gz</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elector - Modern Tor Browser Built with Electron</title>
+    <meta name="description" content="A secure, privacy-focused Tor browser built with modern Electron. Browse .onion sites safely with enhanced security features.">
+    <style>
+        :root {
+            --primary: #7d4cdb;
+            --secondary: #9060eb;
+            --dark: #1a1a2e;
+            --darker: #0f0f1e;
+            --light: #f8f9fa;
+            --accent: #00d9ff;
+            --success: #00c853;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background: var(--darker);
+        }
+        
+        .hero {
+            background: var(--gradient);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23ffffff"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"/></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .features {
+            padding: 80px 20px;
+            background: var(--dark);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .downloads {
+            padding: 80px 20px;
+            background: var(--darker);
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .download-card {
+            background: var(--gradient);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .download-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(125, 76, 219, 0.3);
+        }
+        
+        .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        
+        .onion-links {
+            padding: 80px 20px;
+            background: var(--dark);
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .link-category {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .link-category h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .link-category ul {
+            list-style: none;
+        }
+        
+        .link-category li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            background: var(--darker);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .github-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="version-badge">✨ Version 2.1.1 - Now Available</div>
+            <h1>🛡️ Elector</h1>
+            <p class="tagline">Modern Tor Browser Built with Electron</p>
+            <p>Browse .onion sites securely with enhanced privacy features and modern web technologies</p>
+            
+            <div class="cta-buttons">
+                <a href="https://github.com/james-see/elector/releases/latest" class="btn btn-primary">📦 Download Now</a>
+                <a href="https://github.com/james-see/elector" class="btn btn-secondary">⭐ View on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Elector?</h2>
+            <p class="section-subtitle">Privacy-first browsing with modern security standards</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Enhanced Security</h3>
+                    <p>Built with Electron 35.7.5 featuring Chromium sandboxing, context isolation, and modern security best practices to protect against XSS attacks.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Native Tor Integration</h3>
+                    <p>Automatically routes all traffic through Tor (SOCKS5 proxy 127.0.0.1:9050). Full support for v3 onion addresses (56 characters).</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Modern & Lightweight</h3>
+                    <p>Built on modern Electron with React. Fast, responsive, and uses minimal system resources compared to traditional Tor Browser.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Clean Interface</h3>
+                    <p>Simple, intuitive browser UI with tabs, navigation controls, and a clean design focused on what matters: your privacy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Regular Updates</h3>
+                    <p>Actively maintained with automated builds via GitHub Actions. Security patches and feature updates released regularly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Free & Open Source</h3>
+                    <p>MIT licensed. Inspect the code, contribute improvements, or fork it for your own needs. Complete transparency.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="main-content">
-      <p><img src="https://cloud.githubusercontent.com/assets/616585/18190724/c47550ee-7092-11e6-9cb4-15e02b9ca298.png"> </p>
-
-<h1>
-<a id="elector" class="anchor" href="#elector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>elector</h1>
-
-<p><a href="https://gitter.im/elector-browser/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/elector-browser/Lobby.svg" alt="Join the chat at https://gitter.im/elector-browser/Lobby"></a></p>
-
-<p>TOR BROWSER IN ELECTRON</p>
-
-<h3>
-<a id="note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NOTE:</h3>
-
-<p>THIS IS IN ALPHA, USER BEWARE. </p>
-
-<h3>
-<a id="why" class="anchor" href="#why" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WHY?:</h3>
-
-<p>One liner -- "A super lightweight Tor connected browser that uses the latest in web technologies."</p>
-
-<p>I made this because I wanted a simple browser that auto-connected to my tor service running on my MacBook that I installed via homebrew. If you are running tor in OSX via homebrew, then this app will work out of the box if you follow the install instructions below. Otherwise, you may have to edit your torrc file and (gosh!) actually use the terminal / command line / whatever you call it.</p>
-
-<h3>
-<a id="security-issues" class="anchor" href="#security-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SECURITY ISSUES:</h3>
-
-<p>ELECTRON has known security issues with using an unsandboxed version of chromium. The roadmap is to use the electron-prebuilt module from Brave browser since they re-sandboxed and fixed a lot of the security issues related to potential for XSS attacks.</p>
-
-<h3>
-<a id="fork-me" class="anchor" href="#fork-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FORK ME:</h3>
-
-<p>Please fork and make this better.<br>
-READ the <a href="https://github.com/jamesacampbell/elector/blob/master/CONTRIBUTING.md">CONTRIBUTING</a> doc for tips on how to help with this project. Thank you!</p>
-
-<p>here is how to run it yourself:</p>
-
-<h3>
-<a id="install-instructions" class="anchor" href="#install-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install instructions</h3>
-
-<ol>
-<li><p>you must have tor already installed. follow the instructions from torproject.org</p></li>
-<li><p>then to run this code, follow these steps:</p></li>
-</ol>
-
-<pre><code>git clone https://github.com/jamesacampbell/elector.git
-cd elector
-npm install -d
-npm start
-</code></pre>
-
-<h3>
-<a id="tidbits" class="anchor" href="#tidbits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>tidbits:</h3>
-
-<p>The index.js file is configured to force the connection through the socks5 proxy 127.0.0.1:9050. So for OSX you can install tor via homebrew:</p>
-
-<p><em>in case you don't have tor install on OSX yet</em></p>
-
-<h3>
-<a id="osx--homebrew-easiness-to-get-tor-installed-as-a-service" class="anchor" href="#osx--homebrew-easiness-to-get-tor-installed-as-a-service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OSX &amp; homebrew easiness to get Tor installed as a service:</h3>
-
-<pre><code>brew install tor
-</code></pre>
-
-<p>then make sure tor is set to run when your OS starts, then check duckduckgo onion (<a href="http://3g2upl4pq6kufc4m.onion">http://3g2upl4pq6kufc4m.onion</a>) site to confirm it is working</p>
-
-<h3>
-<a id="useful-onion-links" class="anchor" href="#useful-onion-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>useful .onion links</h3>
-
-<p>duck duck go <a href="http://3g2upl4pq6kufc4m.onion">http://3g2upl4pq6kufc4m.onion</a></p>
-
-<p>tor paste <a href="http://mc6nld3smffo3vgm.onion">http://mc6nld3smffo3vgm.onion</a></p>
-
-<p>not evil tor search <a href="http://hss3uro2hsxfogfq.onion">http://hss3uro2hsxfogfq.onion</a></p>
-
-<p>hidden wiki <a href="http://gxamjbnu7uknahng.onion/wiki/index.php/Main_Page">http://gxamjbnu7uknahng.onion/wiki/index.php/Main_Page</a></p>
-
-<p>hidden answers <a href="http://answerstedhctbek.onion">http://answerstedhctbek.onion</a></p>
-
-<p>librechan <a href="http://librechbtnnmzoa7.onion">http://librechbtnnmzoa7.onion</a></p>
-
-<p>searx <a href="http://ulrn6sryqaifefld.onion">http://ulrn6sryqaifefld.onion</a></p>
-
-<p>etherpad hosted by riseup onion <a href="http://5jp7xtmox6jyoqd5.onion">http://5jp7xtmox6jyoqd5.onion</a></p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/jamesacampbell/elector">Elector</a> is maintained by <a href="https://github.com/jamesacampbell">jamesacampbell</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
+    <section class="downloads">
+        <div class="container">
+            <h2 class="section-title">Download for Your Platform</h2>
+            <p class="section-subtitle">Available for macOS, Linux, and Windows</p>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="platform-icon">🍎</div>
+                    <h3>macOS</h3>
+                    <p>DMG & ZIP</p>
+                    <a href="https://github.com/james-see/elector/releases/latest" class="btn btn-primary" style="margin-top: 20px;">Download</a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="platform-icon">🐧</div>
+                    <h3>Linux</h3>
+                    <p>AppImage & DEB</p>
+                    <a href="https://github.com/james-see/elector/releases/latest" class="btn btn-primary" style="margin-top: 20px;">Download</a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="platform-icon">🪟</div>
+                    <h3>Windows</h3>
+                    <p>EXE & Portable</p>
+                    <a href="https://github.com/james-see/elector/releases/latest" class="btn btn-primary" style="margin-top: 20px;">Download</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+                <p><strong>Note:</strong> You must have Tor installed and running on port 9050</p>
+                <p style="margin-top: 10px;">
+                    <strong>Install Tor:</strong><br>
+                    macOS: <code>brew install tor</code><br>
+                    Linux: <code>apt install tor</code> or <code>dnf install tor</code><br>
+                    Windows: Download from <a href="https://www.torproject.org/download/" class="github-link">torproject.org</a>
+                </p>
+            </div>
+        </div>
     </section>
 
-  
+    <section class="onion-links">
+        <div class="container">
+            <h2 class="section-title">Recommended Tor Sites</h2>
+            <p class="section-subtitle">Verified v3 onion addresses • All traffic encrypted through Tor</p>
+            
+            <div class="links-grid">
+                <div class="link-category">
+                    <h4>🔍 Search Engines</h4>
+                    <ul>
+                        <li>• DuckDuckGo (default)</li>
+                        <li>• Ahmia</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>📰 News & Media</h4>
+                    <ul>
+                        <li>• ProPublica</li>
+                        <li>• BBC News</li>
+                        <li>• The New York Times</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>🗂️ Directories</h4>
+                    <ul>
+                        <li>• The Hidden Wiki</li>
+                        <li>• Daniel's Onion List</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>🔐 Privacy & Security</h4>
+                    <ul>
+                        <li>• Tor Project</li>
+                        <li>• Riseup</li>
+                        <li>• SecureDrop Directory</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>📚 Libraries</h4>
+                    <ul>
+                        <li>• Internet Archive</li>
+                        <li>• Z-Library</li>
+                        <li>• Imperial Library</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>💬 Communication</h4>
+                    <ul>
+                        <li>• ProtonMail</li>
+                        <li>• Keybase</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>🛡️ Whistleblowing</h4>
+                    <ul>
+                        <li>• WikiLeaks</li>
+                        <li>• The Intercept SecureDrop</li>
+                    </ul>
+                </div>
+                
+                <div class="link-category">
+                    <h4>⚠️ Safety Tips</h4>
+                    <ul>
+                        <li>• Verify addresses</li>
+                        <li>• Use bookmarks</li>
+                        <li>• Watch for phishing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(0,217,255,0.1); border-radius: 15px; border: 1px solid rgba(0,217,255,0.3);">
+                <p><strong>ℹ️ HTTP vs HTTPS for .onion sites:</strong></p>
+                <p style="margin-top: 10px; opacity: 0.9;">
+                    HTTP is sufficient for .onion addresses because Tor already provides end-to-end encryption. 
+                    HTTPS works too but isn't necessary for privacy since traffic never leaves the Tor network.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                <strong>Elector</strong> is open source software maintained by 
+                <a href="https://github.com/james-see" class="github-link">James Campbell</a>
+            </p>
+            <p style="margin-top: 10px; opacity: 0.7;">
+                Licensed under MIT • 
+                <a href="https://github.com/james-see/elector" class="github-link">View on GitHub</a> • 
+                <a href="https://github.com/james-see/elector/blob/master/CHANGELOG.md" class="github-link">Changelog</a> • 
+                <a href="https://github.com/james-see/elector/issues" class="github-link">Report Issues</a>
+            </p>
+            <p style="margin-top: 20px; opacity: 0.5; font-size: 0.9rem;">
+                Elector v2.1.1 • Modern Electron 35.7.5 • Enhanced Security
+            </p>
+        </div>
+    </footer>
   </body>
 </html>
