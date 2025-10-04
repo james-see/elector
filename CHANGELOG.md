@@ -2,10 +2,16 @@
 
 ## Version 2.1.1 - October 2025
 
-### 🐛 Bug Fix
-- **Fixed viewport sizing** - Webview now properly fills entire window using flexbox layout
+### 🐛 Bug Fixes
+- **Fixed viewport sizing** - Webview now properly fills entire window below navbar
+- Solution: Used `position: fixed` on container with `top: 65px` and `webview { width: 100%; height: 100%; }`
 - Previously only showing ~60px of content at top, now shows full page
-- Removed manual resize function in favor of CSS-based layout
+- **Changed to HTTP for .onion addresses** - DuckDuckGo default now uses `http://` instead of `https://`
+
+### 📝 Documentation
+- Added explanation that HTTP is sufficient for .onion addresses (Tor provides encryption)
+- Updated all example .onion links to use HTTP
+- Added note about Tor's built-in end-to-end encryption for onion services
 
 ## Version 2.1.0 - October 2025
 

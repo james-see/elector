@@ -10,27 +10,17 @@ html, body {
 #browser-chrome {
   height: 100vh;
   width: 100vw;
-  position: relative;
 }
 
 #browser-tabs {
   position: relative;
-  z-index: 100;
+  z-index: 10;
 }
 
 #browser-navbar {
   position: relative;
   height: 35px;
-  z-index: 100;
-}
-
-#browser-page {
-  position: absolute;
-  top: 65px;  /* Below tabs + navbar */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
+  z-index: 10;
 }
 
 /* Only visible pages should be displayed */
