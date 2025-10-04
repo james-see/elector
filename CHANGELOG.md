@@ -12,6 +12,15 @@
 - Added explanation that HTTP is sufficient for .onion addresses (Tor provides encryption)
 - Updated all example .onion links to use HTTP
 - Added note about Tor's built-in end-to-end encryption for onion services
+- **Added comprehensive list of recommended Tor sites** organized by category:
+  - Search Engines (DuckDuckGo, Ahmia)
+  - News & Media (ProPublica, BBC, NYT)
+  - Directories (Hidden Wiki, Daniel's List)
+  - Privacy & Security (Tor Project, Riseup, SecureDrop)
+  - Libraries (Internet Archive, Z-Library, Imperial Library)
+  - Communication (ProtonMail, Keybase)
+  - Whistleblowing (WikiLeaks, The Intercept)
+  - Safety tips for browsing onion sites
 
 ## Version 2.1.0 - October 2025
 

@@ -68,15 +68,63 @@ Elector is configured to route all traffic through the SOCKS5 proxy at `127.0.0.
 https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
 ```
 
-### Useful .onion Links
-
-- **DuckDuckGo**: `http://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/`
-- **Tor Project**: `http://2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion/`
-- **ProPublica**: `http://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/`
+### Recommended Tor Sites
 
 **Note**: HTTP is used for `.onion` addresses because Tor already provides end-to-end encryption. HTTPS works too but isn't necessary for privacy.
 
-For more onion sites, visit [The Hidden Wiki](https://thehiddenwiki.com/) or use DuckDuckGo's search.
+#### 🔍 Search Engines
+- **DuckDuckGo**: `http://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/`
+  - Privacy-focused search engine (default homepage)
+- **Ahmia**: `http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion/`
+  - Search engine for onion services
+
+#### 📰 News & Media
+- **ProPublica**: `http://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/`
+  - Investigative journalism
+- **BBC News**: `http://bbcnewsd73hkzno2ini43t4gblxvycyac5aw4gnv7t2rccijh7745uqd.onion/`
+  - International news service
+- **The New York Times**: `http://ej3kv4ebuugcmuwxctx5ic7zxh73rnxt42soi3tdneu2c2em55thufqd.onion/`
+  - US newspaper
+
+#### 🗂️ Directories & Wikis
+- **The Hidden Wiki**: `http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/`
+  - Directory of onion sites
+- **Daniel's Onion List**: `http://danielas3rtn54uwmofdo3x2bsdifr47huasnmbgqzfrec5ubupvtpid.onion/`
+  - Curated list of verified onion sites
+
+#### 🔐 Privacy & Security
+- **Tor Project**: `http://2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion/`
+  - Official Tor Project site
+- **Riseup**: `http://vww6ybal4bd7szmgncyruucpgfkqahzddi37ktceo3ah7ngmcopnpyyd.onion/`
+  - Secure communication tools
+- **SecureDrop Directory**: `http://sdolvtfhatvsysc6l34d65ymdwxcujausv7k5jk4cy5ttzhjoi6fzvyd.onion/`
+  - Anonymous document submission
+
+#### 📚 Libraries & Archives
+- **Internet Archive**: `http://archiveiya74codqgiixo33q62qlrqtkgmcitqx5u2oeqnmn5bpcbiyd.onion/`
+  - Digital library of websites, books, and media
+- **Z-Library**: `http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion/`
+  - Free eBook library
+- **Imperial Library**: `http://kx5thpx2olielkihfyo4jgjqfb7zx7wxr3sd4xzt26ochei4m6f7tayd.onion/`
+  - Free book collection
+
+#### 💬 Communication
+- **ProtonMail**: `http://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/`
+  - Encrypted email service
+- **Keybase**: `http://keybase5wmilwokqirssclfnsqrjdsi7jdir5wy7y7iu3tanwmtp6oid.onion/`
+  - Secure messaging and file sharing
+
+#### 🛡️ Whistleblowing
+- **WikiLeaks**: Search for current onion address via their clearnet site
+  - *Note: WikiLeaks onion address changes periodically for security*
+- **The Intercept SecureDrop**: `http://27m3p2uv7igmj6kvd4ql3cct5h3sdwrsajovkkndeufumzyfhlfev4qd.onion/`
+  - Submit documents anonymously
+
+#### ⚠️ Safety Tips
+- Always verify onion addresses from official sources
+- Onion addresses can change - bookmark trusted directories
+- Be cautious of phishing sites with similar addresses
+- Never enter personal information unless you trust the site
 
 ### Testing Your Connection
 
