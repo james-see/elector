@@ -7,8 +7,8 @@
     <meta name="description" content="A secure, privacy-focused Tor browser built with modern Electron. Browse .onion sites safely with enhanced security features.">
     <style>
         :root {
-            --primary: #7d4cdb;
-            --secondary: #9060eb;
+            --primary: #5fb97c;
+            --secondary: #7d4cdb;
             --dark: #1a1a2e;
             --darker: #0f0f1e;
             --light: #f8f9fa;
@@ -277,15 +277,28 @@
             transform: scale(1.05);
         }
         
-        .logo {
-            max-width: 200px;
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
             margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
         
         @media (max-width: 768px) {
             .logo {
-                max-width: 150px;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-title-container {
+                gap: 15px;
             }
             h1 {
                 font-size: 2.5rem;
@@ -304,22 +317,24 @@
 <body>
     <div class="hero">
         <div class="container">
-            <img src="https://cloud.githubusercontent.com/assets/616585/18190724/c47550ee-7092-11e6-9cb4-15e02b9ca298.png" alt="Elector Logo" class="logo">
             <div class="version-badge">✨ Version 2.1.1 - Now Available</div>
-            <h1>Elector</h1>
+            <div class="logo-title-container">
+                <img src="https://cloud.githubusercontent.com/assets/616585/18190724/c47550ee-7092-11e6-9cb4-15e02b9ca298.png" alt="Elector Logo" class="logo">
+                <h1>Elector</h1>
+            </div>
             
             <div class="github-badges">
                 <a href="https://github.com/james-see/elector" target="_blank" rel="noopener">
-                    <img src="https://img.shields.io/github/stars/james-see/elector?style=for-the-badge&logo=github&color=7d4cdb&labelColor=1a1a2e" alt="GitHub Stars">
+                    <img src="https://img.shields.io/github/stars/james-see/elector?style=for-the-badge&logo=github&color=5fb97c&labelColor=1a1a2e" alt="GitHub Stars">
                 </a>
                 <a href="https://github.com/james-see/elector/fork" target="_blank" rel="noopener">
-                    <img src="https://img.shields.io/github/forks/james-see/elector?style=for-the-badge&logo=github&color=9060eb&labelColor=1a1a2e" alt="GitHub Forks">
+                    <img src="https://img.shields.io/github/forks/james-see/elector?style=for-the-badge&logo=github&color=7d4cdb&labelColor=1a1a2e" alt="GitHub Forks">
                 </a>
                 <a href="https://github.com/james-see/elector/releases" target="_blank" rel="noopener">
                     <img src="https://img.shields.io/github/v/release/james-see/elector?style=for-the-badge&logo=github&color=00d9ff&labelColor=1a1a2e" alt="Latest Release">
                 </a>
                 <a href="https://github.com/james-see/elector/blob/master/LICENSE" target="_blank" rel="noopener">
-                    <img src="https://img.shields.io/badge/license-MIT-00c853?style=for-the-badge&labelColor=1a1a2e" alt="MIT License">
+                    <img src="https://img.shields.io/badge/license-MIT-5fb97c?style=for-the-badge&labelColor=1a1a2e" alt="MIT License">
                 </a>
             </div>
             
