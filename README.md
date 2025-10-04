@@ -55,33 +55,29 @@ npm run build:linux    # Linux
 npm run build:win      # Windows
 ```
 
-### tidbits:
+### Configuration
 
-The index.js file is configured to force the connection through the socks5 proxy 127.0.0.1:9050. So for OSX you can install tor via homebrew:
+Elector is configured to route all traffic through the SOCKS5 proxy at `127.0.0.1:9050` (default Tor port).
 
-_in case you don't have tor install on OSX yet_
+### Tor v3 Onion Addresses
 
-### OSX & homebrew easiness to get Tor installed as a service:
+**Note**: Modern Tor uses longer v3 onion addresses (56 characters). Old v2 addresses (16 characters) are deprecated and no longer work.
 
+**Example v3 address**:
 ```
-brew install tor
+https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
 ```
-then make sure tor is set to run when your OS starts, then check duckduckgo onion (http://3g2upl4pq6kufc4m.onion) site to confirm it is working
 
-### useful .onion links
+### Useful .onion Links
 
-duck duck go http://3g2upl4pq6kufc4m.onion
+- **DuckDuckGo**: `https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/`
+- **Tor Project**: `http://2gzyxa5ihm7nsggfxnu52rck2vv4rvmdlkiu3zzui5du4xyclen53wid.onion/`
+- **ProPublica**: `https://p53lf57qovyuvwsc6xnrppyply3vtqm7l6pcobkmyqsiofyeznfu5uqd.onion/`
 
-tor paste http://mc6nld3smffo3vgm.onion
+For more onion sites, visit [The Hidden Wiki](https://thehiddenwiki.com/) or use DuckDuckGo's search.
 
-not evil tor search http://hss3uro2hsxfogfq.onion
+### Testing Your Connection
 
-hidden wiki http://gxamjbnu7uknahng.onion/wiki/index.php/Main_Page
-
-hidden answers http://answerstedhctbek.onion
-
-librechan http://librechbtnnmzoa7.onion
-
-searx http://ulrn6sryqaifefld.onion
-
-etherpad hosted by riseup onion http://5jp7xtmox6jyoqd5.onion
+To verify Tor is working:
+1. Visit: `https://check.torproject.org/`
+2. You should see: "Congratulations. This browser is configured to use Tor."

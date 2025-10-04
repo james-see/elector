@@ -1,5 +1,22 @@
 # Changelog
 
+## Version 2.1.0 - October 2025
+
+### ✅ Fully Working Release
+- **Fixed all webview API compatibility issues** - Updated `getUrl()` → `getURL()`
+- **Navigation now fully functional** - Can browse .onion sites successfully
+- **Updated default page** - Now uses modern v3 DuckDuckGo onion address
+- **Updated documentation** - Removed deprecated v2 onion addresses, added v3 examples
+- **Disabled DevTools by default** - Can be re-enabled for debugging
+
+### 📝 Documentation Updates
+- Explained v3 vs v2 onion address differences (56 chars vs 16 chars)
+- Added current working .onion links
+- Added Tor connection verification instructions
+
+### 🎉 Status
+**Elector is now fully functional!** Browse .onion sites through Tor with modern Electron security.
+
 ## Version 2.0.1 - October 2025
 
 ### 🔧 Bug Fixes

@@ -5,7 +5,7 @@ const urllib = require('url')
 
 function createPageObject (location) {
   return {
-    location: location||'http://3g2upl4pq6kufc4m.onion/',
+    location: location||'https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/',
     statusText: false,
     title: 'new tab',
     isLoading: false,
@@ -182,11 +182,13 @@ var BrowserChrome = React.createClass({
       this.getWebView().reload()
     },
     onClickBundles: function () {
-      var location = urllib.parse(this.getWebView().getUrl()).path
+      var webview = this.getWebView()
+      var location = webview.getURL ? urllib.parse(webview.getURL()).path : ''
       this.getPage().navigateTo('/bundles/view.html#'+location)
     },
     onClickVersions: function () {
-      var location = urllib.parse(this.getWebView().getUrl()).path
+      var webview = this.getWebView()
+      var location = webview.getURL ? urllib.parse(webview.getURL()).path : ''
       this.getPage().navigateTo('/bundles/versions.html#'+location)
     },
     onClickSync: console.log.bind(console, 'sync'),
@@ -219,7 +221,7 @@ var BrowserChrome = React.createClass({
       // update state
       var webview = this.getWebView(pageIndex)
       page.statusText = false
-      page.location = webview.getUrl()
+      page.location = webview.getURL ? webview.getURL() : page.location
       page.canGoBack = webview.canGoBack()
       page.canGoForward = webview.canGoForward()
       if (!page.title)
@@ -230,7 +232,8 @@ var BrowserChrome = React.createClass({
     onPageTitleSet: function (e) {
       var page = this.getPageObject()
       page.title = e.title
-      page.location = this.getWebView().getUrl()
+      var webview = this.getWebView()
+      page.location = webview.getURL ? webview.getURL() : page.location
       this.setState(this.state)
     },
     onContextMenu: function (e, page, pageIndex) {
