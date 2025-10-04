@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 2.1.1 - October 2025
+
+### 🐛 Bug Fix
+- **Fixed viewport sizing** - Webview now properly fills entire window using flexbox layout
+- Previously only showing ~60px of content at top, now shows full page
+- Removed manual resize function in favor of CSS-based layout
+
 ## Version 2.1.0 - October 2025
 
 ### ✅ Fully Working Release
