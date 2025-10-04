@@ -1,10 +1,10 @@
-var ipc = require('ipc')
+const { ipcRenderer } = require('electron')
 
 function triggerMenu (data) {
-  ipc.sendToHost('contextmenu-data', data)
+  ipcRenderer.sendToHost('contextmenu-data', data)
 }
 
-ipc.on('get-contextmenu-data', function (pos) {
+ipcRenderer.on('get-contextmenu-data', function (pos) {
   var data = {
     x: pos.x,
     y: pos.y,

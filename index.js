@@ -30,6 +30,9 @@ function createWindow() {
 
   mainWindow.loadFile('browser.html')
 
+  // Open DevTools for debugging (comment out in production)
+  mainWindow.webContents.openDevTools()
+
   mainWindow.on('closed', function() {
     mainWindow = null
   })

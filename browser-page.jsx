@@ -60,7 +60,7 @@ var BrowserPage = React.createClass({
   render: function () {
     return <div id="browser-page" className={this.props.isActive ? 'visible' : 'hidden'}>
       <BrowserPageSearch isActive={this.props.page.isSearching} onPageSearch={this.onPageSearch} />
-      <webview ref="webview" preload="./preload/main.js" onContextMenu={this.props.onContextMenu} />
+      <webview ref="webview" preload="./preload/main.js" partition="persist:tor" onContextMenu={this.props.onContextMenu} />
       <BrowserPageStatus page={this.props.page} />
     </div>
   }  
@@ -90,9 +90,11 @@ var webviewEvents = {
 }
 
 function resize () {
+  // Modern Electron webviews don't use shadow DOM
   Array.prototype.forEach.call(document.querySelectorAll('webview'), function (webview) {
-    var obj = webview && webview.querySelector('::shadow object')
-    if (obj)
-      obj.style.height = (window.innerHeight - 59) + 'px' // -61 to adjust for the tabs and navbar regions
+    if (webview) {
+      webview.style.height = (window.innerHeight - 59) + 'px' // -59 to adjust for the tabs and navbar regions
+      webview.style.width = '100%'
+    }
   })
 }

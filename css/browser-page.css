@@ -2,6 +2,12 @@
   position: relative;
 }
 
+#browser-page webview {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 59px);
+}
+
 #browser-page-search {
   position: absolute;
   top: 5px;
